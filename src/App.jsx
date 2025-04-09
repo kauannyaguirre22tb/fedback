@@ -1,4 +1,5 @@
 import iconStar from "./assets/icon-star.svg"
+import illustrationThankYou from "./assets/illustration-thank-you.svg"
 import { useState } from "react"
 
 export function App() {
@@ -7,8 +8,8 @@ export function App() {
   
   function handleSubmit() {
     if (rateNote !== 0) {
-    setSubmited(true)
-    return
+      setSubmited(true)
+      return
     }
 
     alert("Please, choose a rate button!")
@@ -40,8 +41,14 @@ return (
       <button onClick={handleSubmit} className="bg-orange w-full py-3 rounded-3xl uppercase font-bold tracking-1">Submit</button>
     </div>
   ) : (
-    <div className="bg-radial-gradient text-white rounded-2xl p-6 max-w-103 font-overpass">
-      <p>enviou tudo</p>
+    <div className="bg-radial-gradient text-white rounded-2xl p-6 max-w-103 font-overpass text-center">
+     <img className="mx-auto mb-6" src={illustrationThankYou} alt="illustration Thank You" />
+     <p className="bg-dark-blue text-orange w-fit mx-auto py-1.24 px-3 rounded-3xl mb-6 ">You selected 4 out of 5</p>
+
+     <h1 className="text-2xl font-bold mb-2.5">Thank You!</h1>
+
+     <p className="text-sm text-light-grey leading-1">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+
     </div>
   )
 )
